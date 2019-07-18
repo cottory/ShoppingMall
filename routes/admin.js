@@ -51,7 +51,7 @@ router.get('/products', paginate.middleware(5, 50), csrfProtection, async (req,r
 
         const pageCount = Math.ceil( totalCount / req.query.limit );
     
-        const pages = paginate.getArrayPages(req)( 4 , pageCount, req.query.page);
+        const pages = paginate.getArrayPages(req)( 5 , pageCount, req.query.page);
 
         res.render( 'admin/products' , { products , pages , pageCount, csrfToken: req.csrfToken() });
 
