@@ -8,15 +8,15 @@ http://15.164.34.117/
 
 사용기술
 ======  
-서버: Ubuntu (AWS)  
-웹서버: NGINX  
-API 서버: Node.js  
-DB: Mysql
+- 서버: Ubuntu (AWS)  
+- 웹서버: NGINX  
+- API 서버: Node.js  
+- DB: Mysql
 
 주요기능
 ======  
-장바구니 기능  
-결제 기능    
+- 장바구니 기능  
+- 결제 기능    
 
 레퍼런스
 ======    
