@@ -16,6 +16,9 @@ DB: Mysql
 주요기능
 ======  
 장바구니 기능  
-결제 기능  
+결제 기능    
 
+REFERENCE
+======    
+https://www.fastcampus.co.kr/dev_camp_nodejs/
 
