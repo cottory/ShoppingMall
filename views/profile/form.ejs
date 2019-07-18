@@ -1,0 +1,58 @@
+<% include ../header.ejs %>
+    <form action="" method="post" id="editForm">
+        <input type="hidden" name="_csrf" value="<%=csrfToken%>" />
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th style="width:200px;">아이디</th>
+                    <td>
+                        <input type="text" class="form-control" value="<%=user.username%>" readonly/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>닉네임</th>
+                    <td>
+                        <input type="text" class="form-control" name="displayname" value="<%=user.displayname%>" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>패스워드</th>
+                    <td>
+                        <input type="password" class="form-control" name="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>패스워드 확인</th>
+                    <td>
+                        <input type="password" class="form-control" name="password2" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary">작성하기</button>
+    </form>
+
+<script>
+$('#editForm').submit(function(){
+    if(confirm("수정하시겠습니까?")){
+
+        var $passwordInput = $('#editForm input[name=password]');
+        var $passwordInput2 = $('#editForm input[name=password2]');
+
+        if($passwordInput.val() === "" ||  $passwordInput2.val() === ""){
+            alert("비밀번호를 입력해주세요.");
+            return false;
+        }
+        if($passwordInput.val() !== $passwordInput2.val()){
+            alert("패스워드와 확인용패스워드를 똑같이 입력해주세요.");
+            return false;
+        }
+        return true;
+    }else{
+        return false;
+    }
+    
+});
+</script>
+
+<% include ../footer.ejs %>

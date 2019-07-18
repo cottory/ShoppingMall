@@ -1,0 +1,18 @@
+<% include ../header.ejs %>
+    <input type="hidden" name="_csrf" value="<%=csrfToken%>" />
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>아이디</th>
+                <td><%=user.username%></td>
+            </tr>
+            <tr>
+                <th>닉네임</th>
+                <td><%=user.displayname%></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/profile/edit" class="btn btn-default">수정하기</a>
+
+<% include ../footer.ejs %>

@@ -1,0 +1,39 @@
+{
+  "name": "shoppingmall",
+  "version": "1.0.0",
+  "description": "ShoppingMall",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e js,html app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cottory/ShoppingMall.git"
+  },
+  "author": "Chanyoung Jo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cottory/ShoppingMall/issues"
+  },
+  "homepage": "https://github.com/cottory/ShoppingMall#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "csurf": "^1.10.0",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-paginate": "^1.0.0",
+    "express-session": "^1.16.2",
+    "iamporter": "^1.4.2",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "mysql2": "^1.6.5",
+    "nunjucks": "^3.2.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.42.0"
+  }
+}

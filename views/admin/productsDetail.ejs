@@ -1,0 +1,54 @@
+<% include ../header.ejs %>
+    
+    <% include ./sidebar.ejs %>
+    <div class="col-sm-10">
+        <input type="hidden" name="_csrf" value="<%=csrfToken%>" />
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <%=product.name%>
+            </div>
+            <div class="panel-body">
+                <div style="padding-bottom: 10px">
+                    작성일 : <%=product.dateFormat( product.createdAt )%>
+                </div>
+
+                <% if(product.thumbnail){%>
+                <p>
+                <img src="/uploads/<%=product.thumbnail%>" style="max-width: 100%"/>
+                </p>
+                <% } %>
+                                        
+                <%-product.description%>    <!--위직에디터를 보여주기 위한 수정. 하나(-)로 하면 태그를 그대로 노출해줌.
+                                                (=)두개로 하면 태그를 화면에 출력해주는 것.-->
+
+                <!-- 댓글영역  -->
+                <hr />
+                <ul>
+                    <% product.Memo.forEach(function(memo){ %>
+                        <li>
+                            <%= memo.content %>
+                            (
+                                <a href="/admin/products/delete/<%=product.id%>/<%= memo.id %>" 
+                                    onclick="return confirm('삭제하시겠습니까?')">
+                                    삭제
+                                </a>
+                            )
+                        </li>
+                    <%})%>
+                </ul>
+                메모작성하기
+                <form action="" method="post">
+                    <textarea class="form-control" name="content" required></textarea>
+                    <button class="btn btn-primary" style="margin-top: 10px">메모작성</button>
+                </form>
+
+                
+
+            </div>
+        </div>
+
+        <a href="/admin/products" class="btn btn-default">목록으로</a>
+        <a href="/admin/products/edit/<%=product.id%>" class="btn btn-primary">수정</a>
+    </div>
+    
+<% include ../footer.ejs %>
