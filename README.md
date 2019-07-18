@@ -18,7 +18,7 @@ DB: Mysql
 장바구니 기능  
 결제 기능    
 
-REFERENCE
+레퍼런스
 ======    
 https://www.fastcampus.co.kr/dev_camp_nodejs/
 
